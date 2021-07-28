@@ -10,6 +10,7 @@ class TemporalVariableTransformer(BaseEstimator, TransformerMixin):
 
     def __init__(self, variables, reference_variable):
         
+        # Error handling code
         if not isinstance(variables, list):
             raise ValueError('variables should be a list')
         

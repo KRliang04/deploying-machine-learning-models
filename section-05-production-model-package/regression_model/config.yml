@@ -67,12 +67,13 @@ random_state: 0
 alpha: 0.001
 
 # categorical variables with NA in train set
+# In EDA section, we define that when var has less than 10% missing value, we filled in the most frequent value
 categorical_vars_with_na_frequent:
   - BsmtQual
   - BsmtExposure
   - BsmtFinType1
   - GarageFinish
-
+# In EDA section, we define that when var has more than 10% missing value, we filled in "missing"
 categorical_vars_with_na_missing:
   - FireplaceQu
 

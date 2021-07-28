@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+# BaseEstomator: get_params function can get the parameters
+# TransformerMixin: fit_transform function can fit and transform
 from sklearn.base import BaseEstimator, TransformerMixin
 
 

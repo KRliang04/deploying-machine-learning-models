@@ -12,6 +12,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import Binarizer, MinMaxScaler
 
 from regression_model.config.core import config
+# Customized feature engineering
 from regression_model.processing import features as pp
 
 price_pipe = Pipeline(

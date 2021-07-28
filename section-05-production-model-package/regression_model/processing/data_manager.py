@@ -10,6 +10,7 @@ from regression_model.config.core import DATASET_DIR, TRAINED_MODEL_DIR, config
 
 
 def load_dataset(*, file_name: str) -> pd.DataFrame:
+    # use this * to enforce an argument to only be specified by its name
     dataframe = pd.read_csv(Path(f"{DATASET_DIR}/{file_name}"))
     dataframe["MSSubClass"] = dataframe["MSSubClass"].astype("O")
 

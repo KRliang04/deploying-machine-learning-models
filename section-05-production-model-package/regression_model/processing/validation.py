@@ -36,6 +36,7 @@ def validate_inputs(*, input_data: pd.DataFrame) -> Tuple[pd.DataFrame, Optional
 
     try:
         # replace numpy nans so that pydantic can validate
+        # ‘records’ : list like [{column -> value}, … , {column -> value}]
         MultipleHouseDataInputs(
             inputs=validated_data.replace({np.nan: None}).to_dict(orient="records")
         )
@@ -44,8 +45,9 @@ def validate_inputs(*, input_data: pd.DataFrame) -> Tuple[pd.DataFrame, Optional
 
     return validated_data, errors
 
-
+# Pydantic schema, making use of python typeins
 class HouseDataInputSchema(BaseModel):
+    # You can remove the optional to make it required
     Alley: Optional[str]
     BedroomAbvGr: Optional[int]
     BldgType: Optional[str]
